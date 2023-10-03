@@ -8,3 +8,9 @@
     background-image: url("../imges/background.jpg");
     background-size: cover;
 }
+
+.girl{
+    height: 284px;
+    margin-top: 385px;
+    position: absolute;
+}
