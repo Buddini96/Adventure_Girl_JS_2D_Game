@@ -44,12 +44,12 @@
         jumpImageNumber  = jumpImageNumber + 1;
 
         if (jumpImageNumber <= 6){
-            girlMarginTop = girlMarginTop - 20;
+            girlMarginTop = girlMarginTop - 30;
             girl.style.marginTop = girlMarginTop + "px";
         }
 
         if (jumpImageNumber >= 7){
-            girlMarginTop = girlMarginTop + 20;
+            girlMarginTop = girlMarginTop + 30;
             girl.style.marginTop = girlMarginTop + "px";
         }
         if (jumpImageNumber == 11){
@@ -70,12 +70,12 @@
          //     girlMarginTop = girlMarginTop + 5;
          //     girl.style.marginTop = girlMarginTop + "px";
          // }
-         //
+
          // if (slideImageNumber >= 5){
          //     girlMarginTop = girlMarginTop + 5;
          //     girl.style.marginTop = girlMarginTop + "px";
          // }
-         if (slideImageNumber == 4){
+         if (slideImageNumber == 5){
              slideImageNumber = 1;
              clearInterval(slideAnimationNumber);
              slideAnimationNumber = 0;
