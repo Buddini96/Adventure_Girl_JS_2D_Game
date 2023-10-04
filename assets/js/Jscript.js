@@ -117,7 +117,9 @@
             if (boxAnimationId == 0){
                 boxAnimationId = setInterval(boxAnimation,100);
             }
-
+            if (dragon1AnimationId == 0){
+                dragon1AnimationId = setInterval(dragon1Animation,100);
+            }
         }
 
 
@@ -131,6 +133,9 @@
             if (boxAnimationId == 0){
                 boxAnimationId = setInterval(boxAnimation,100);
             }
+            if (dragon1AnimationId == 0){
+                dragon1AnimationId = setInterval(dragon1Animation,100);
+            }
 
         }
 
@@ -143,6 +148,9 @@
             }
             if (boxAnimationId == 0){
                 boxAnimationId = setInterval(boxAnimation,100);
+            }
+            if (dragon1AnimationId == 0){
+                dragon1AnimationId = setInterval(dragon1Animation,100);
             }
 
         }
@@ -175,7 +183,7 @@
             }
 
             if (i >=5 ){
-                boxMarginLeft = boxMarginLeft + 500;
+                boxMarginLeft = boxMarginLeft + 700;
             }
         }
 
@@ -194,6 +202,44 @@
 
 
     ///////////////////////////////////////////////////////////
+    //Add Up Barrier
+
+    dragon1MarginLeft = 1600;//1800
+
+    function createDragon1(){
+
+        for (var i = 0; i < 10; i++) {
+            var dragon1 = document.createElement("div");
+            dragon1.className = "dragon1";
+            document.getElementById("background").appendChild(dragon1);
+            dragon1.style.marginLeft = dragon1MarginLeft + "px";
+            dragon1.id = "dragon1" + i;
+
+            // dragon1MarginLeft = dragon1MarginLeft + 1600;
+
+            if (i < 5 ){
+                dragon1MarginLeft = dragon1MarginLeft + 1800;//2100
+            }
+            if (i >= 5 ){
+                dragon1MarginLeft = dragon1MarginLeft + 1200 ;//800
+            }
+        }
+    }
+
+
+    var dragon1AnimationId = 0;
+
+    function dragon1Animation(){
+        for (var i = 0; i < 10; i++) {
+            var dragon1 = document.getElementById("dragon1"+i);
+            var currentMarginLeft = getComputedStyle(dragon1).marginLeft;
+            var newMarginLeft = parseInt(currentMarginLeft)-35;
+            dragon1.style.marginLeft = newMarginLeft + "px";
+        }
+
+    }
+
+
 
 
 
