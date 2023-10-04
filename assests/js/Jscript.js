@@ -37,7 +37,7 @@
         clearInterval(idleAnimationNumber);
     }
 
-    girlMarginTop = 329;
+    girlMarginTop = 417;
 
     function jumpAnimation(){
         jumpImageNumber  = jumpImageNumber + 1;
@@ -100,6 +100,31 @@
     function moveBackground(){
         backgroundImagePositionX = backgroundImagePositionX - 20;
         document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
+    }
+
+    boxMarginLeft = 1600;
+
+
+    //Add Barriers
+    function createBoxes(){
+
+        for (var i = 0; i <= 10; i++) {
+            var box = document.createElement("div");
+            box.className = "box";
+            document.getElementById("background").appendChild(box);
+            box.style.marginLeft = boxMarginLeft + "px";
+
+            // boxMarginLeft = boxMarginLeft + 1000;
+
+            if(i < 5){
+                boxMarginLeft = boxMarginLeft + 500;
+            }
+
+            if (i >=5 ){
+                boxMarginLeft = boxMarginLeft + 300;
+            }
+        }
+
     }
 
 

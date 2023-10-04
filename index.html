@@ -5,11 +5,13 @@
     <title>Js_2D_Game</title>
     <link rel="stylesheet" href="assests/css/style.css">
 </head>
-<body class="body" onload="idleAnimationStart();" onkeypress="keyCheck(event)">
-    <div class="background">
+
+<body class="body" onload="idleAnimationStart(); createBoxes(); " onkeypress="keyCheck(event)">
+    <div class="background" id="background">
 
         <img src="assests/imges/Idle%20(1).png" class="girl" id="girl">
     </div>
+
 
     <script src="assests/js/Jscript.js"></script>
 </body>

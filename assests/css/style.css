@@ -5,13 +5,23 @@
 .background{
     width: 100%;
     height: 100vh;
-    background-image: url("../imges/background.jpg");
+    background-image: url("../imges/background4.jpg");
     background-size: cover;
     background-repeat: repeat-x;
+    overflow-x: hidden;
+    position: absolute;
 }
 
 .girl{
-    height: 284px;
-    margin-top: 329px;
+    height: 238px;
+    margin-top: 417px;
     position: absolute;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    margin-top: 535px;
 }
