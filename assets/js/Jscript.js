@@ -14,7 +14,7 @@
         if (idleImageNumber == 11){
             idleImageNumber = 1;
         }
-        girl.src = "./assets/images/idle("+idleImageNumber+").png";
+        girl.src = "./assets/images/Idle("+idleImageNumber+").png";
     }
 
     function idleAnimationStart(){
@@ -29,7 +29,7 @@
         if (runImageNumber == 9){
             runImageNumber = 1;
         }
-        girl.src = "./assets/images/run("+runImageNumber+").png";
+        girl.src = "./assets/images/Run("+runImageNumber+").png";
     }
 
     function runAnimationStart(){
@@ -58,7 +58,7 @@
             runImageNumber = 0;
             runAnimationStart();
         }
-        girl.src = "./assets/images/jump("+jumpImageNumber+").png";
+        girl.src = "./assets/images/Jump("+jumpImageNumber+").png";
     }
 
     function jumpAnimationStart(){
