@@ -66,13 +66,13 @@
      function slideAnimation(){
          slideImageNumber  = slideImageNumber + 1;
 
-         // if (slideImageNumber <= 2){
-         //     girlMarginTop = girlMarginTop + 5;
-         //     girl.style.marginTop = girlMarginTop + "px";
-         // }
+         if (slideImageNumber <= 2){
+             girlMarginTop = girlMarginTop - 0;
+             girl.style.marginTop = girlMarginTop + "px";
+         }
 
-         // if (slideImageNumber >= 5){
-         //     girlMarginTop = girlMarginTop + 5;
+         // if (slideImageNumber >= 2){
+         //     girlMarginTop = girlMarginTop - 5;
          //     girl.style.marginTop = girlMarginTop + "px";
          // }
          if (slideImageNumber == 5){
@@ -114,8 +114,8 @@
             if (moveBackgroundAnimationId == 0){
                 moveBackgroundAnimationId = setInterval(moveBackground,100);
             }
-            if (boxAnimationId == 0){
-                boxAnimationId = setInterval(boxAnimation,100);
+            if (dragonAnimationId == 0){
+                dragonAnimationId = setInterval(dragonAnimation,100);
             }
             if (dragon1AnimationId == 0){
                 dragon1AnimationId = setInterval(dragon1Animation,100);
@@ -130,8 +130,8 @@
             if (moveBackgroundAnimationId == 0){
                 moveBackgroundAnimationId = setInterval(moveBackground,100);
             }
-            if (boxAnimationId == 0){
-                boxAnimationId = setInterval(boxAnimation,100);
+            if (dragonAnimationId == 0){
+                dragonAnimationId = setInterval(dragonAnimation,100);
             }
             if (dragon1AnimationId == 0){
                 dragon1AnimationId = setInterval(dragon1Animation,100);
@@ -146,8 +146,8 @@
             if (moveBackgroundAnimationId == 0){
                 moveBackgroundAnimationId = setInterval(moveBackground,100);
             }
-            if (boxAnimationId == 0){
-                boxAnimationId = setInterval(boxAnimation,100);
+            if (dragonAnimationId == 0){
+                dragonAnimationId = setInterval(dragonAnimation,100);
             }
             if (dragon1AnimationId == 0){
                 dragon1AnimationId = setInterval(dragon1Animation,100);
@@ -163,35 +163,35 @@
         document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
     }
 
-    boxMarginLeft = 1600;
+    dragonMarginLeft = 1600;
 
 
     //Add down Barrier
-    function createBoxes(){
+    function createDragon(){
 
         for (var i = 0; i <= 10; i++) {
             var box = document.createElement("div");
             box.className = "box";
             document.getElementById("background").appendChild(box);
-            box.style.marginLeft = boxMarginLeft + "px";
+            box.style.marginLeft = dragonMarginLeft + "px";
             box.id = "box"+i;
 
-            // boxMarginLeft = boxMarginLeft + 1000;
+            // dragonMarginLeft = dragonMarginLeft + 1000;
 
             if(i < 5){
-                boxMarginLeft = boxMarginLeft + 1000;
+                dragonMarginLeft = dragonMarginLeft + 1000;
             }
 
             if (i >=5 ){
-                boxMarginLeft = boxMarginLeft + 700;
+                dragonMarginLeft = dragonMarginLeft + 700;
             }
         }
 
     }
 
-    var boxAnimationId = 0;
+    var dragonAnimationId = 0;
 
-    function boxAnimation(){
+    function dragonAnimation(){
         for (var i = 0; i < 10; i++) {
             var box = document.getElementById("box"+i);
             var currentMarginLeft = getComputedStyle(box).marginLeft;
