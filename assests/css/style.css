@@ -19,9 +19,12 @@
 }
 
 .box{
-    width: 100px;
-    height: 100px;
-    background-color: red;
+    width: 250px;
+    height: 323px;
+    /*background-color: red;*/
     position: absolute;
-    margin-top: 535px;
+    margin-top: 400px;
+    background-image: url("../imges/dragon.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
