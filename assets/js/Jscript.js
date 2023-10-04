@@ -117,6 +117,7 @@
             if (boxAnimationId == 0){
                 boxAnimationId = setInterval(boxAnimation,100);
             }
+
         }
 
 
@@ -130,6 +131,7 @@
             if (boxAnimationId == 0){
                 boxAnimationId = setInterval(boxAnimation,100);
             }
+
         }
 
         if (keyCode == 122){
@@ -142,6 +144,7 @@
             if (boxAnimationId == 0){
                 boxAnimationId = setInterval(boxAnimation,100);
             }
+
         }
     }
 
@@ -155,7 +158,7 @@
     boxMarginLeft = 1600;
 
 
-    //Add Barriers
+    //Add down Barrier
     function createBoxes(){
 
         for (var i = 0; i <= 10; i++) {
@@ -188,6 +191,11 @@
             box.style.marginLeft = newMarginLeft + "px";
         }
     }
+
+
+    ///////////////////////////////////////////////////////////
+
+
 
 
 
