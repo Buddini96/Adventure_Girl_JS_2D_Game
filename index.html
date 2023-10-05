@@ -4,15 +4,100 @@
     <meta charset="UTF-8">
     <title>Js_2D_Game</title>
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+
+        .startbody{
+            margin: 0;
+        }
+
+        .startpage{
+
+            width: 100%;
+            height: 100vh;
+            background-image: url("./assets/images/background.jpg");
+            background-size: cover;
+            background-repeat: repeat-x;
+            overflow-x: hidden;
+            position: absolute;
+        }
+
+        .name_tag{
+            width: 500px;
+            position: absolute;
+            height: 100px;
+            right: 0;
+            left: 33%;
+
+
+        }
+
+
+        .nameTag{
+            text-align: center;
+            font-weight: bold;
+            font-size: 50px;
+            font-family: "JetBrains Mono ExtraBold";
+            color: #67fffd;
+
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        button#btnPlay {
+            width: 25%;
+            height: 25%;
+            background-image: url('./assets/images/startButton.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            top: 35%;
+        }
+
+        .start_button {
+            top: 77vh;
+            margin-left: 600px;
+            bottom: 8vh;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            padding: 0.9vw 1.8vw;
+            background-color: #996533;
+            border: 0.25vw solid #6e3b0f;
+            color: #fff;
+            border-radius: 2vw;
+            font-size: 2vw;
+            font-weight: bold;
+            letter-spacing: 0.25vw;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            z-index: 1;
+            text-decoration: none;
+        }
+
+        .start_button:active{
+            scale: 0.90;
+        }
+
+    </style>
+
 </head>
 
-<!--Add Barrier Part-->
-<body class="body" onload="idleAnimationStart(); createDragon(); createDragon1(); " onkeypress="keyCheck(event)">
-    <div class="background" id="background">
-
-        <img src="./assets/images/Idle(1).png" alt="girls" class="girl" id="girl">
+<body class="startbody">
+    <div class="startpage">
+        <a href="startPage.html"  class="start_button">Start Game</a>
     </div>
 
-    <script src="assets/js/Jscript.js"></script>
+    <div class="name_tag">
+        <h1 CLASS="nameTag"> ADVENTURE GIRL </h1>
+    </div>
+
+<script src="/assets/js/jquery-3.6.1.min.js"></script>
+
 </body>
 </html>
+
