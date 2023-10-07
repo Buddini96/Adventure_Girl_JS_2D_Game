@@ -1,13 +1,7 @@
- var girl = document.getElementById("girl");
+  var girl = document.getElementById("girl");
 
-  idleImageNumber = 1;
-  idleAnimationNumber = 0;
-  runImageNumber = 1;
-  runAnimationNumber = 0;
-  jumpAnimationNumber = 0;
-  jumpImageNumber = 1;
-  slideAnimationNumber = 0;
-  slideImageNumber = 1;
+  var idleImageNumber = 1;
+  var idleAnimationNumber = 0;
 
 
     //Idle animation
@@ -20,11 +14,15 @@
     }
 
     function idleAnimationStart(){
-        idleAnimationNumber = setInterval(idleAnimation,200);
+        idleAnimationNumber = setInterval(idleAnimation,100);
     }
 
 
-    //Run Animation
+    ////////////////////Run Animation////////////////////////////////////////
+
+     var runImageNumber = 1;
+     var runAnimationNumber = 0;
+
     function runAnimation(){
         runImageNumber  = runImageNumber + 1;
         if (runImageNumber == 9){
@@ -38,18 +36,22 @@
         clearInterval(idleAnimationNumber);
     }
 
-    girlMarginTop = 417;
+    //////////////Jump Animation//////////////////////
+
+     var jumpAnimationNumber = 0;
+     var jumpImageNumber = 0;
+     var girlMarginTop = 450;/*417*/
 
     function jumpAnimation(){
         jumpImageNumber  = jumpImageNumber + 1;
 
         if (jumpImageNumber <= 6){
-            girlMarginTop = girlMarginTop - 30;
+            girlMarginTop = girlMarginTop - 50;
             girl.style.marginTop = girlMarginTop + "px";
         }
 
         if (jumpImageNumber >= 7){
-            girlMarginTop = girlMarginTop + 30;
+            girlMarginTop = girlMarginTop + 50;
             girl.style.marginTop = girlMarginTop + "px";
         }
         if (jumpImageNumber == 11){
@@ -62,7 +64,18 @@
         girl.src = "./assets/images/Jump("+jumpImageNumber+").png";
     }
 
+     function jumpAnimationStart(){
+         clearInterval(idleAnimationNumber);
+         runImageNumber=0;
+         clearInterval(runAnimationNumber);
+         jumpAnimationNumber = setInterval(jumpAnimation,250);
+     }
+
+
      //Slide Animation
+     var slideAnimationNumber = 0;
+     var slideImageNumber = 1;
+
      function slideAnimation(){
          slideImageNumber  = slideImageNumber + 1;
 
@@ -92,12 +105,7 @@
          slideAnimationNumber = setInterval(slideAnimation,100);
      }
 
-    function jumpAnimationStart(){
-        clearInterval(idleAnimationNumber);
-        runImageNumber=0;
-        clearInterval(runAnimationNumber);
-        jumpAnimationNumber = setInterval(jumpAnimation,100);
-    }
+
 
     function keyCheck(event){
         // alert(event.which);
@@ -131,7 +139,7 @@
                 moveBackgroundAnimationId = setInterval(moveBackground,100);
             }
             if (dragonAnimationId == 0){
-                dragonAnimationId = setInterval(dragonAnimation,100);
+                dragonAnimationId = setInterval(dragonAnimation,250);
             }
             if (dragon1AnimationId == 0){
                 dragon1AnimationId = setInterval(dragon1Animation,100);
@@ -158,12 +166,17 @@
 
     var backgroundImagePositionX = 0;
     var moveBackgroundAnimationId = 0;
+    var score = 0;
+
     function moveBackground(){
         backgroundImagePositionX = backgroundImagePositionX - 20;
         document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
+
+        score = score + 1;
+        document.getElementById("score").innerHTML = score;
     }
 
-    dragonMarginLeft = 1600;
+    var dragonMarginLeft = 1600;
 
 
     //Add down Barrier
@@ -183,7 +196,7 @@
             }
 
             if (i >=5 ){
-                dragonMarginLeft = dragonMarginLeft + 700;
+                dragonMarginLeft = dragonMarginLeft + 800;
             }
         }
 
@@ -197,14 +210,34 @@
             var currentMarginLeft = getComputedStyle(box).marginLeft;
             var newMarginLeft = parseInt(currentMarginLeft)-25;
             box.style.marginLeft = newMarginLeft + "px";
+
+            if (newMarginLeft >= -110 & newMarginLeft <= 100){
+                if (girlMarginTop > 300){
+                    clearInterval(dragonAnimationId);
+
+                    clearInterval(runAnimationNumber);
+                    runAnimationNumber = -1;
+
+                    clearInterval(jumpAnimationNumber);
+                    jumpAnimationNumber = -1;
+
+                    clearInterval(moveBackgroundAnimationId);
+                    moveBackgroundAnimationId = -1;
+
+                    deadAnimationNumber = setInterval(girlDeadAnimation,100)
+
+                }
+            }
+
         }
     }
 
 
-    ///////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////////
     //Add Up Barrier
 
-    dragon1MarginLeft = 1600;//1800
+   /* dragon1MarginLeft = 1100;//1800
 
     function createDragon1(){
 
@@ -237,6 +270,26 @@
             dragon1.style.marginLeft = newMarginLeft + "px";
         }
 
+    }*/
+
+    //Dead Animation
+
+    var deadImageNumber = 1;
+    var deadAnimationNumber = 0;
+    function girlDeadAnimation(){
+        deadImageNumber = deadImageNumber + 1;
+
+        if (deadImageNumber == 11){
+            deadImageNumber = 10;
+
+            document.getElementById("end").style.visibility = "visible";
+            document.getElementById("endScore").innerHTML  = score;
+        }
+        girl.src = "./assets/images/Dead("+deadImageNumber+").png";
+    }
+
+    function reload(){
+        location.reload();
     }
 
 
