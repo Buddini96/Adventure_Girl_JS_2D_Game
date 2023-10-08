@@ -224,7 +224,7 @@
                     clearInterval(moveBackgroundAnimationId);
                     moveBackgroundAnimationId = -1;
 
-                    deadAnimationNumber = setInterval(girlDeadAnimation,100)
+                    deadAnimationNumber = setInterval(girlDeadAnimation,200)
 
                 }
             }
