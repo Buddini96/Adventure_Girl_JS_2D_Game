@@ -75,13 +75,14 @@
      //Slide Animation
      var slideAnimationNumber = 0;
      var slideImageNumber = 1;
+    var girlMarginTop1 = 420;
 
      function slideAnimation(){
          slideImageNumber  = slideImageNumber + 1;
 
          if (slideImageNumber <= 2){
-             girlMarginTop = girlMarginTop - 0;
-             girl.style.marginTop = girlMarginTop + "px";
+             girlMarginTop1 = girlMarginTop1 - 0;
+             girl.style.marginTop = girlMarginTop1 + "px";
          }
 
          // if (slideImageNumber >= 2){
@@ -102,7 +103,7 @@
          clearInterval(runAnimationNumber);
          runImageNumber=0;
          clearInterval(runAnimationNumber);
-         slideAnimationNumber = setInterval(slideAnimation,100);
+         slideAnimationNumber = setInterval(slideAnimation,200);
      }
 
 
@@ -155,10 +156,10 @@
                 moveBackgroundAnimationId = setInterval(moveBackground,100);
             }
             if (dragonAnimationId == 0){
-                dragonAnimationId = setInterval(dragonAnimation,100);
+                dragonAnimationId = setInterval(dragonAnimation,200);
             }
             if (dragon1AnimationId == 0){
-                dragon1AnimationId = setInterval(dragon1Animation,100);
+                dragon1AnimationId = setInterval(dragon1Animation,200);
             }
 
         }
@@ -182,7 +183,7 @@
     //Add down Barrier
     function createDragon(){
 
-        for (var i = 0; i <= 10; i++) {
+        for (var i = 0; i <= 30; i++) {
             var box = document.createElement("div");
             box.className = "box";
             document.getElementById("background").appendChild(box);
@@ -191,11 +192,11 @@
 
             // dragonMarginLeft = dragonMarginLeft + 1000;
 
-            if(i < 5){
+            if(i < 15){
                 dragonMarginLeft = dragonMarginLeft + 1000;
             }
 
-            if (i >=5 ){
+            if (i >=15 ){
                 dragonMarginLeft = dragonMarginLeft + 800;
             }
         }
@@ -205,7 +206,7 @@
     var dragonAnimationId = 0;
 
     function dragonAnimation(){
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 30; i++) {
             var box = document.getElementById("box"+i);
             var currentMarginLeft = getComputedStyle(box).marginLeft;
             var newMarginLeft = parseInt(currentMarginLeft)-25;
@@ -237,11 +238,11 @@
     //////////////////////////////////////////////////////////////////////////
     //Add Up Barrier
 
-   /* dragon1MarginLeft = 1100;//1800
+    dragon1MarginLeft = 1800;//1800
 
     function createDragon1(){
 
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 20; i++) {
             var dragon1 = document.createElement("div");
             dragon1.className = "dragon1";
             document.getElementById("background").appendChild(dragon1);
@@ -263,14 +264,14 @@
     var dragon1AnimationId = 0;
 
     function dragon1Animation(){
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 20; i++) {
             var dragon1 = document.getElementById("dragon1"+i);
             var currentMarginLeft = getComputedStyle(dragon1).marginLeft;
-            var newMarginLeft = parseInt(currentMarginLeft)-35;
+            var newMarginLeft = parseInt(currentMarginLeft)-20;
             dragon1.style.marginLeft = newMarginLeft + "px";
         }
 
-    }*/
+    }
 
     //Dead Animation
 
